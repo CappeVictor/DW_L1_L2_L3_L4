@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Demonstração de Flexbox com quatro cards responsivos."
+    >
+    <title>Lista 01 — CSS Flexbox</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="pagina">
+      <header class="cabecalho">
+        <p class="etiqueta">Desenvolvimento Web I</p>
+        <h1>Galeria de cards com Flexbox</h1>
+        <p>
+          Os cards se reorganizam conforme a largura disponível na tela.
+        </p>
+      </header>
+
+      <section class="galeria" aria-label="Galeria de quatro cards">
+        <article class="card">
+          <h2>Card 1</h2>
+          <p>O contêiner flex organiza seus filhos diretos.</p>
+        </article>
+        <article class="card">
+          <h2>Card 2</h2>
+          <p><code>flex-wrap: wrap</code> permite criar novas linhas.</p>
+        </article>
+        <article class="card">
+          <h2>Card 3</h2>
+          <p><code>gap: 1rem</code> mantém um espaço uniforme.</p>
+        </article>
+        <article class="card">
+          <h2>Card 4</h2>
+          <p><code>align-content: flex-start</code> agrupa as linhas no topo.</p>
+        </article>
+      </section>
+
+      <footer class="rodape">
+        <p id="mensagem">Exemplo prático de CSS Flexbox.</p>
+        <button class="botao" id="botao-mensagem" type="button">
+          Ver objetivo
+        </button>
+      </footer>
+    </main>
+  </body>
+</html>

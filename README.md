@@ -1,5 +1,3 @@
-# GITHUB_PAGES
-
 # Lista 01 — CSS: Flexbox (Parte 1)
 
 **Disciplina:** Desenvolvimento Web I  

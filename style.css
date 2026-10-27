@@ -1,0 +1,119 @@
+/* Estilos da demonstração de Flexbox. */
+
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  color: #172033;
+  background: #f3f5f9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.pagina {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: min(100% - 2rem, 70rem);
+  min-height: 100vh;
+  margin-inline: auto;
+  padding-block: 2rem;
+}
+
+.cabecalho {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: #ffffff;
+}
+
+.cabecalho h1 {
+  margin-block: 0.25rem 0.75rem;
+  line-height: 1.2;
+}
+
+.etiqueta {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  align-content: flex-start;
+  gap: 1rem;
+}
+
+.card {
+  width: 14rem;
+  max-width: 100%;
+  padding: 1.25rem;
+  border: 1px solid #d8deea;
+  border-radius: 0.875rem;
+  background: #ffffff;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.card p {
+  margin-bottom: 0;
+}
+
+.rodape {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding: 1rem 1.25rem;
+  border-radius: 1rem;
+  background: #e5eaf4;
+}
+
+.rodape p {
+  margin: 0;
+}
+
+.botao {
+  padding: 0.65rem 1rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: #1d4ed8;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.botao:hover {
+  background: #1e40af;
+}
+
+.botao:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 3px;
+}
+
+@media (max-width: 30rem) {
+  .pagina {
+    width: min(100% - 1rem, 70rem);
+    padding-block: 0.5rem;
+  }
+
+  .cabecalho,
+  .card {
+    padding: 1rem;
+  }
+}
