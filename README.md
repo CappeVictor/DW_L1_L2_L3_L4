@@ -1,85 +1,49 @@
-# Lista 01: CSS Flexbox (Parte 1)
+# Respostas: Lista de Exercícios, CSS Flexbox (parte 1)
 
-**Disciplina:** Desenvolvimento Web I
-**Professor:** Hewerton Enes de Oliveira
+Desenvolvimento Web I · Técnico Integrado em Informática para Internet · Prof. Hewerton Enes de Oliveira
 
 ## Parte A: Múltipla escolha
 
-### 1. Alternativa (b)
-
-A propriedade `display: flex` vai no contêiner, ou seja, no elemento pai. A partir disso, os filhos diretos passam a ser itens flex e podem ser organizados com as propriedades do Flexbox.
-
-### 2. Alternativa (c)
-
-O valor padrão de `flex-direction` é `row`. Com ele, os itens ficam organizados em uma linha, na horizontal.
-
-### 3. Alternativa (b)
-
-Quando usamos `flex-direction: row`, o eixo principal é horizontal e segue da esquerda para a direita na direção de escrita padrão.
-
-### 4. Alternativa (b)
-
-Com `flex-direction: column`, os itens ficam em coluna e o eixo principal passa a ser vertical. Por isso, `justify-content` distribui os itens verticalmente.
-
-### 5. Alternativa (c)
-
-A propriedade `align-items` alinha os itens no eixo cruzado. Quando a direção é `row`, esse eixo é vertical.
-
-### 6. Alternativa (c)
-
-O valor padrão de `align-items` é `stretch`. Isso faz com que os itens se estiquem no eixo cruzado para ocupar o espaço disponível, desde que suas dimensões não impeçam esse comportamento.
-
-### 7. Alternativa (b)
-
-`justify-content: space-between` deixa o primeiro item no início do contêiner e o último no final. O espaço que sobra é distribuído entre os itens, sem ser colocado nas extremidades.
-
-### 8. Alternativa (b)
-
-`flex-wrap: wrap` permite que os itens passem para a linha seguinte quando não houver espaço suficiente para mantê-los na mesma linha.
-
-### 9. Alternativa (b)
-
-`align-content` organiza as linhas do Flexbox no eixo cruzado. Para ter efeito, é preciso permitir a quebra dos itens e formar mais de uma linha; também deve existir espaço livre para distribuir.
-
-### 10. Alternativa (b)
-
-`gap` define o espaço entre os itens sem acrescentar, por si só, espaço nas bordas do contêiner. Com margens em cada item, pode acabar sobrando espaço depois do último elemento.
-
-### 11. Alternativa (c)
-
-Com `flex-direction: row-reverse`, a direção visual dos itens é invertida no eixo horizontal: eles aparecem da direita para a esquerda. Isso não altera a ordem dos elementos no HTML.
-
-### 12. Alternativa (a)
-
-`justify-content: center` centraliza os itens no eixo principal, enquanto `align-items: center` os centraliza no eixo cruzado. Com `flex-direction: row`, a combinação centraliza o conteúdo horizontal e verticalmente.
+1. **(b)** A propriedade `display: flex` é aplicada no contêiner (pai), cujos filhos diretos se tornam itens flex.
+2. **(c)** O valor padrão de `flex-direction` é `row`.
+3. **(b)** Com `flex-direction: row`, o eixo principal é horizontal, da esquerda para a direita.
+4. **(b)** Com `flex-direction: column`, o eixo principal passa a ser vertical, então `justify-content` distribui os itens na vertical.
+5. **(c)** `align-items` alinha os itens ao longo do eixo cruzado.
+6. **(c)** O valor padrão de `align-items` é `stretch`.
+7. **(b)** `space-between` coloca o primeiro item no início, o último no fim, e distribui o espaço somente entre eles.
+8. **(b)** `flex-wrap: wrap` permite que os itens quebrem para a linha seguinte quando não cabem.
+9. **(b)** `align-content` só tem efeito visível com `flex-wrap: wrap` (ou `wrap-reverse`) e mais de uma linha.
+10. **(b)** `gap` define o espaço entre os itens, sem criar espaço extra nas bordas externas do contêiner.
+11. **(c)** Com `flex-direction: row-reverse`, a ordem visual é invertida no eixo horizontal, da direita para a esquerda. A ordem no HTML não muda.
+12. **(a)** `justify-content: center` centraliza no eixo principal, e `align-items: center` centraliza no eixo cruzado.
 
 ## Parte B: Dissertativas e análise de código
 
-### 13. Diferença entre contêiner flex e item flex
+### 13. Contêiner flex e item flex
 
-O contêiner flex é o elemento que recebe `display: flex`. Os filhos diretos desse elemento se tornam itens flex e passam a ser organizados de acordo com as regras do Flexbox. Elementos que estão dentro desses filhos não viram itens do contêiner principal automaticamente.
+O **contêiner** é o elemento que recebe `display: flex`. Os **itens** são os filhos diretos dele, e passam a ser organizados pelas regras do Flexbox. Netos e outros descendentes não viram itens automaticamente.
 
-### 14. Como A, B e C ficam dispostos?
+### 14. Disposição de A, B e C
 
-Os elementos A, B e C ficam um abaixo do outro, seguindo a ordem em que aparecem no HTML. Isso acontece porque `flex-direction: column` organiza os itens verticalmente. Como o contêiner tem 300 px de altura e `justify-content: center`, o conjunto fica centralizado na vertical.
+Os elementos ficam um abaixo do outro, na ordem do HTML, porque `flex-direction: column` organiza os itens na vertical. Com `height: 300px` e `justify-content: center`, o conjunto fica centralizado verticalmente dentro do contêiner.
 
-### 15. O que muda quando `flex-direction: column` é removido?
+### 15. Removendo `flex-direction: column`
 
-Sem essa propriedade, o valor padrão é `row`, então os três filhos tentam ficar lado a lado. Como o valor padrão de `flex-wrap` é `nowrap`, eles não passam para outra linha. O navegador tenta reduzir a largura dos itens para fazê-los caber; se isso não for possível por causa do tamanho mínimo ou do conteúdo, pode ocorrer transbordamento horizontal.
+Sem essa propriedade, o valor padrão `row` faz os três filhos tentarem ficar lado a lado. Como `flex-wrap` tem o valor padrão `nowrap`, eles não quebram para outra linha. O navegador reduz a largura dos itens para tentar caber; se não conseguir, por causa do tamanho mínimo ou do conteúdo, ocorre transbordamento horizontal.
 
-### 16. Diferença entre `justify-content` e `align-items`
+### 16. `justify-content` e `align-items`
 
-**(a) Com `flex-direction: row`:** `justify-content` atua no eixo principal horizontal, distribuindo os itens na horizontal. `align-items` atua no eixo cruzado vertical, alinhando os itens na vertical.
+**(a) Com `flex-direction: row`:** `justify-content` atua no eixo principal (horizontal), e `align-items` atua no eixo cruzado (vertical).
 
-**(b) Com `flex-direction: column`:** os eixos mudam de orientação. `justify-content` passa a atuar na vertical, enquanto `align-items` atua na horizontal.
+**(b) Com `flex-direction: column`:** os eixos trocam de orientação. `justify-content` passa a atuar na vertical, e `align-items` passa a atuar na horizontal.
 
-### 17. Por que `align-content: center` não funciona com uma única linha?
+### 17. Por que `align-content: center` não funciona com uma linha
 
-Com `flex-wrap: nowrap`, os itens ficam em uma única linha. Nesse caso, `align-content` não tem várias linhas para organizar e, por isso, não produz o efeito esperado. Para funcionar, é necessário permitir a quebra com `flex-wrap: wrap` ou `wrap-reverse`, formar mais de uma linha e ter espaço livre no eixo cruzado.
+Com `flex-wrap: nowrap` e uma única linha, `align-content` não tem várias linhas para organizar, então não produz efeito. Para funcionar, é preciso usar `flex-wrap: wrap` (ou `wrap-reverse`), formar mais de uma linha e ter espaço livre no eixo cruzado.
 
-### 18. Diferença entre `gap: 16px` e `margin-right: 16px`
+### 18. `gap` no contêiner ou `margin-right` nos itens
 
-`gap: 16px` cria um espaço de 16 px entre os itens. Já `margin-right: 16px` coloca uma margem à direita de cada item, inclusive do último, o que pode deixar um espaço extra no final. O `gap` também facilita a manutenção do layout quando os itens mudam de posição ou quebram para outra linha.
+`gap: 16px` cria 16px apenas entre os itens. `margin-right: 16px` aplica margem a cada item, inclusive ao último, o que deixa um espaço extra no final. Um problema típico da margem é esse espaço sobrando na borda, além de o layout ficar mais difícil de manter quando os itens quebram de linha.
 
 ## Parte C: Prática
 
@@ -96,9 +60,7 @@ Com `flex-wrap: nowrap`, os itens ficam em uma única linha. Nesse caso, `align-
 }
 ```
 
-`display: flex` deixa os itens lado a lado, `gap` cria 12 px entre eles e `align-items: center` os alinha verticalmente. As demais regras removem o recuo e os marcadores padrão da lista.
-
-### 20. Galeria com quebra de linha e espaçamento
+### 20. Galeria com quebra de linha
 
 ```css
 .galeria {
@@ -108,9 +70,7 @@ Com `flex-wrap: nowrap`, os itens ficam em uma única linha. Nesse caso, `align-
 }
 ```
 
-`flex-wrap: wrap` permite que os cards passem para outra linha quando faltar espaço. O `gap` define 16 px tanto entre as colunas quanto entre as linhas.
-
-### 21. Centralizar um `.card` no meio da tela
+### 21. Card centralizado na tela
 
 ```css
 .pagina {
@@ -121,9 +81,7 @@ Com `flex-wrap: nowrap`, os itens ficam em uma única linha. Nesse caso, `align-
 }
 ```
 
-A página ocupa pelo menos a altura da tela. `justify-content` e `align-items` centralizam o card nos dois eixos.
-
-### 22. Layout em coluna com 8 px entre as seções
+### 22. Layout em coluna
 
 ```css
 .pagina {
@@ -133,9 +91,7 @@ A página ocupa pelo menos a altura da tela. `justify-content` e `align-items` c
 }
 ```
 
-`flex-direction: column` empilha o `header`, o `main` e o `footer` de cima para baixo. O `gap` cria 8 px entre cada seção.
-
-### 23. Barra de ferramentas com três grupos
+### 23. Barra de ferramentas
 
 ```css
 .toolbar {
@@ -145,9 +101,7 @@ A página ocupa pelo menos a altura da tela. `justify-content` e `align-items` c
 }
 ```
 
-Considerando os três grupos como filhos diretos de `.toolbar`, `space-between` mantém o primeiro no início e o último no final, distribuindo o espaço restante entre os grupos.
-
-### 24. Faixa responsiva com quatro cards
+### 24. Faixa de cards (desafio)
 
 **HTML:**
 
@@ -193,4 +147,4 @@ Considerando os três grupos como filhos diretos de `.toolbar`, `space-between` 
 }
 ```
 
-`flex-wrap: wrap` permite que os cards mudem para a linha seguinte em telas estreitas. `gap: 1rem` mantém o espaçamento entre eles. `align-items: stretch` deixa os cards com a mesma altura dentro de cada linha, e `align-content: flex-start` mantém as linhas agrupadas no topo do contêiner.
+`flex-wrap: wrap` faz os cards quebrarem em telas estreitas. `gap: 1rem` mantém o espaçamento. `align-items: stretch` iguala a altura dos cards dentro de cada linha, e `align-content: flex-start` agrupa as linhas no topo do contêiner.
