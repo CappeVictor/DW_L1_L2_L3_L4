@@ -1,4 +1,4 @@
-# Respostas: Lista de Exercícios, CSS Flexbox (parte 1)
+Lista de Exercícios, CSS Flexbox (parte 1)
 
 **Disciplina:** Desenvolvimento Web I
 **Curso:** Técnico Integrado em Informática para Internet
