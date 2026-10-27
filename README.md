@@ -1,9 +1,9 @@
-# Lista 01 — CSS: Flexbox (Parte 1)
+# Lista 01: CSS Flexbox (Parte 1)
 
-**Disciplina:** Desenvolvimento Web I  
+**Disciplina:** Desenvolvimento Web I
 **Professor:** Hewerton Enes de Oliveira
 
-## Parte A — Múltipla escolha
+## Parte A: Múltipla escolha
 
 ### 1. Alternativa (b)
 
@@ -53,7 +53,7 @@ Com `flex-direction: row-reverse`, a direção visual dos itens é invertida no 
 
 `justify-content: center` centraliza os itens no eixo principal, enquanto `align-items: center` os centraliza no eixo cruzado. Com `flex-direction: row`, a combinação centraliza o conteúdo horizontal e verticalmente.
 
-## Parte B — Dissertativas e análise de código
+## Parte B: Dissertativas e análise de código
 
 ### 13. Diferença entre contêiner flex e item flex
 
@@ -81,7 +81,7 @@ Com `flex-wrap: nowrap`, os itens ficam em uma única linha. Nesse caso, `align-
 
 `gap: 16px` cria um espaço de 16 px entre os itens. Já `margin-right: 16px` coloca uma margem à direita de cada item, inclusive do último, o que pode deixar um espaço extra no final. O `gap` também facilita a manutenção do layout quando os itens mudam de posição ou quebram para outra linha.
 
-## Parte C — Prática
+## Parte C: Prática
 
 ### 19. Menu horizontal
 
